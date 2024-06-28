@@ -1,0 +1,165 @@
+<mvc:View
+    controllerName="com.kpo.lcdreporting.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:semantic="sap.f.semantic"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:upload="sap.m.upload"
+    xmlns:c="sap.suite.ui.commons"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <uxap:ObjectPageLayout
+                id="ObjectPageLayout1"
+                upperCaseAnchorBar="false"
+                showAnchorBar="true"
+                enableLazyLoading="true"
+            >
+                <uxap:sections>
+                    <uxap:ObjectPageSection id="_IDGenObjectPageSection1">
+                        <uxap:subSections>
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection1"
+                                title=""
+                            >
+                                <uxap:blocks>
+                                    <f:SimpleForm
+                                        id="supplierForm1"
+                                        layout="ResponsiveGridLayout"
+                                        title="General Information"
+                                        labelSpanXL="3"
+                                        labelSpanL="3"
+                                        labelSpanM="3"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="3"
+                                        emptySpanL="3"
+                                        emptySpanM="3"
+                                        emptySpanS="12"
+                                        editable="true"
+                                    >
+                                    <Label
+                                            id="_IDGe127"
+                                            text="Title"
+                                        />
+                                        <Input
+                                            id="idContractorNumberInput432"
+                                            value=""
+                                        />
+                                    <Label
+                                            id="_IDGe"
+                                            text="Year"
+                                        />
+                                        <Input
+                                            id="idContractorNumberInput"
+                                            value="2024"
+                                            editable="false"
+                                        />
+                                        <Label
+                                            id="_IDGenLabel1"
+                                            text="Reporting Period"
+                                        />
+                                        <Select
+                                            forceSelection="false"
+                                            width="100%"
+                                            id="ConId"
+                                            items=""
+                                        >
+                                            <core:Item
+                                                key=""
+                                                text="Q4"
+                                           
+                                            />
+                                            <core:Item
+                                                key=""
+                                                text="Q2"
+                                            />
+                                            <core:Item
+                                                key=""
+                                                text="Q3"
+                                            />
+                                            <core:Item
+                                                key=""
+                                                text="Q1"
+                                            />
+                                        </Select>
+ 
+                                       
+                                    </f:SimpleForm>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+ 
+                            <uxap:ObjectPageSubSection
+                                id="_IDGenObjectPageSubSection2"
+                                title="Items"
+                            >
+                                <uxap:blocks>
+                                    <Table
+                                        id="idProductsTable"
+                                        inset="false"
+                                        mode="MultiSelect"
+                                        items="{oSelectedQuestionModel>/}"
+                                    >
+                                        <headerToolbar>
+                                            <OverflowToolbar>
+                                                <ToolbarSpacer />
+                                                <Button
+                                                    text="Add Supplier"
+                                                    press="onAddSupplier"
+                                                />
+                                            </OverflowToolbar>
+                                        </headerToolbar>
+ 
+                                        <columns>
+                                            <Column width="12em">
+                                                <Text text="Supplier ID" />
+                                            </Column>
+                                            <Column
+                                                minScreenWidth="Tablet"
+                                                demandPopin="true"
+                                            >
+                                                <Text text="Supplier Name" />
+                                            </Column>
+                                            <Column
+                                                minScreenWidth="Desktop"
+                                                demandPopin="true"
+                                            >
+                                                <Text text="Local Content Status" />
+                                            </Column>
+                                        </columns>
+                                        <items>
+                                            <ColumnListItem vAlign="Middle">
+                                                <cells>
+                                                    <Text text="{oSelectedQuestionModel>supId}" />
+                                                    <Text text="{oSelectedQuestionModel>supName}" />
+                                                    <Text text="{oSelectedQuestionModel>status}" />
+                                                </cells>
+                                            </ColumnListItem>
+                                        </items>
+                                    </Table>
+                                </uxap:blocks>
+                            </uxap:ObjectPageSubSection>
+                        </uxap:subSections>
+                    </uxap:ObjectPageSection>
+                </uxap:sections>
+            </uxap:ObjectPageLayout>
+        </content>
+        <footer>
+            <Toolbar>
+                <ToolbarSpacer />
+                <Button
+                    text="Submit"
+                    press="onSubmit"
+                />
+                <Button text="Cancel" />
+            </Toolbar>
+        </footer>
+    </Page>
+</mvc:View>

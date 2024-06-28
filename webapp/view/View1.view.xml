@@ -1,0 +1,63 @@
+<mvc:View
+    controllerName="com.kpo.lcdreporting.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <content>
+            <Table
+                id="idProductsTable"
+                inset="false"
+                mode="MultiSelect"
+                items=""
+            >
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <SearchField width="20%" />
+                        <Button
+                            text="Initiate LCD"
+                            press="onInitiateLcd"
+                            type="Emphasized"
+                        />
+                        <!-- <Button
+                            text="Modify"
+                            press="onModify"
+                        /> -->
+                    </OverflowToolbar>
+                </headerToolbar>
+
+                <columns>
+                    <Column width="12em">
+                        <Text text="LCD ID" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Title" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true"
+                    >
+                        <Text text="Reporting Period" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle" type="Active" press="onRowClick">
+                        <cells>
+                            <Text text="LC1001" />
+                            <Text text="LCD Title" />
+                            <Text text="2024" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
